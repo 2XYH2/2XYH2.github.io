@@ -1,0 +1,74 @@
+/* ����������� */
+:root {
+    --hl-color: #ffffff; /* Ĭ��������ɫ��Ϊ��ɫ */
+    --hl-bg: #181818; /* ������ɫ��Ϊ�ǳ���Ļ�ɫ */
+    --hltools-bg: #49b1f587; /* ������������ɫ */
+    --hltools-color: #ffffff; /* ������������ɫ */
+    --hlnumber-bg: #2F2F2F; /* �кű�����ɫ��Ϊһ�ַǳ���Ļ�ɫ���� #181818 ��΢ǳһЩ */
+    --hlnumber-color: #c6c6c6; /* �к�������ɫ��Ϊǳ��ɫ */
+}
+
+.hljs {
+    background: var(--hl-bg); /* ʹ�ö���ı�����ɫ */
+    color: var(--hl-color); /* ʹ�ö����Ĭ��������ɫ */
+}
+
+.hljs-toolbar {
+    background: var(--hltools-bg); /* ������������ɫ */
+    color: var(--hltools-color); /* ������������ɫ */
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-variable {
+    color: #ffb86c; /* ����Ϊ���Ȼ�ɫ */
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name,
+.hljs-tag {
+    color: #ff79c6; /* ����Ϊ����ɫ */
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-addition {
+    color: #50fa7b; /* ����Ϊ����ɫ */
+}
+
+.hljs-deletion,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-meta {
+    color: #ff5555; /* ����Ϊ����ɫ */
+}
+
+.hljs-doctag {
+    color: #8be9fd; /* ����Ϊ����ɫ */
+}
+
+.hljs-attr {
+    color: #f1fa8c; /* ����Ϊ����ɫ */
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+    color: #bd93f9; /* ����Ϊ������ɫ */
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
