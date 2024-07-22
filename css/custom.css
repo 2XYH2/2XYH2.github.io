@@ -5,70 +5,123 @@
     --hltools-bg: #0094ff; /* ������������ɫ��Ϊ����ɫ */
     --hltools-color: #ffffff; /* ������������ɫ��Ϊ��ɫ */
     --hlnumber-bg: #2F2F2F; /* �кű�����ɫ��Ϊһ�ַǳ���Ļ�ɫ���� #181818 ��΢ǳһЩ */
-    --hlnumber-color: #c6c6c6; /* �к�������ɫ��Ϊǳ��ɫ */
+    --hlnumber-color: #ffffff; /* �к�������ɫ��Ϊ��ɫ */
 }
 
-.hljs {
-    background: var(--hl-bg); /* ʹ�ö���ı�����ɫ */
-    color: var(--hl-color); /* ʹ�ö����Ĭ��������ɫ */
+.hljs, .hljs *, .hljs-toolbar, .hljs-toolbar *, .hljs-ln-numbers, .hljs-ln-numbers * {
+    background: var(--hl-bg) !important; /* ʹ�ö���ı�����ɫ */
+    color: var(--hl-color) !important; /* ʹ�ö����Ĭ��������ɫ */
+    font-size: 18px !important; /* ���������С */
+    line-height: 1.2 !important; /* �����и� */
 }
 
 .hljs-toolbar {
-    background: var(--hltools-bg); /* ������������ɫ */
-    color: var(--hltools-color); /* ������������ɫ */
+    background: var(--hltools-bg) !important; /* ������������ɫ */
+    color: var(--hltools-color) !important; /* ������������ɫ */
+    font-size: 18px !important; /* ���ù����������С */
 }
 
+.hljs-ln-numbers {
+    background: var(--hlnumber-bg) !important; /* �кű�����ɫ */
+    color: var(--hlnumber-color) !important; /* �к�������ɫ */
+    font-size: 18px !important; /* �����к������С */
+    line-height: 1.2 !important; /* �����к��и� */
+}
+
+pre, code {
+    font-size: 18px !important; /* ���������С */
+    line-height: 1.2 !important; /* �����и� */
+}
+
+/* VS2022 ��ɫ���� */
 .hljs-comment,
-.hljs-quote,
-.hljs-variable {
-    color: #ffb86c; /* ����Ϊ���Ȼ�ɫ */
+.hljs-quote {
+    color: #6a9955 !important; /* ע�� */
 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-built_in,
-.hljs-name,
-.hljs-tag {
-    color: #ff79c6; /* ����Ϊ����ɫ */
+.hljs-keyword {
+    color: #569cd6 !important; /* �ؼ��� */
 }
 
+.hljs-built_in {
+    color: #c586c0 !important; /* �ڽ����� */
+}
+
+.hljs-type {
+    color: #569cd6 !important; /* ���� (���� int, void) */
+}
+
+.hljs-title {
+    color: #dcdcaa !important; /* ���� (���纯����) */
+}
+
+.hljs-attribute {
+    color: #9cdcfe !important; /* ���� */
+}
+
+.hljs-literal {
+    color: #569cd6 !important; /* ������ */
+}
+
+.hljs-number {
+    color: #b5cea8 !important; /* ���� */
+}
+
+.hljs-regexp,
 .hljs-string,
-.hljs-title,
-.hljs-section,
-.hljs-attribute,
-.hljs-literal,
-.hljs-template-tag,
-.hljs-template-variable,
-.hljs-type,
-.hljs-addition {
-    color: #50fa7b; /* ����Ϊ����ɫ */
-}
-
-.hljs-deletion,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-meta {
-    color: #ff5555; /* ����Ϊ����ɫ */
-}
-
-.hljs-doctag {
-    color: #8be9fd; /* ����Ϊ����ɫ */
-}
-
-.hljs-attr {
-    color: #f1fa8c; /* ����Ϊ����ɫ */
+.hljs-meta .hljs-string {
+    color: #ce9178 !important; /* �������ʽ���ַ��� */
 }
 
 .hljs-symbol,
 .hljs-bullet,
 .hljs-link {
-    color: #bd93f9; /* ����Ϊ������ɫ */
+    color: #dcdcaa !important; /* ���š��ӵ������� */
+}
+
+.hljs-variable,
+.hljs-template-variable {
+    color: #9cdcfe !important; /* ������ģ����� */
+}
+
+.hljs-template-tag {
+    color: #569cd6 !important; /* ģ���ǩ */
+}
+
+.hljs-doctag {
+    color: #808080 !important; /* �ĵ���ǩ */
+}
+
+.hljs-meta {
+    color: #9cdcfe !important; /* Ԫ��Ϣ */
+}
+
+.hljs-operator {
+    color: #d4d4d4 !important; /* ������ */
+}
+
+.hljs-deletion {
+    color: #ce9178 !important; /* ɾ�� */
+}
+
+.hljs-addition {
+    color: #b5cea8 !important; /* ���� */
 }
 
 .hljs-emphasis {
-    font-style: italic;
+    font-style: italic !important;
 }
 
 .hljs-strong {
-    font-weight: bold;
+    font-weight: bold !important;
+}
+
+.hljs-preprocessor {
+    color: #c586c0 !important; /* Ԥ����ָ�� (���� #include) */
+}
+
+/* Ϊ��ȷ���кźʹ������Ӧ�����С�ı仯 */
+.hljs-ln-line {
+    font-size: 18px !important; /* �����к������С */
+    line-height: 1.2 !important; /* �����к��и� */
 }
