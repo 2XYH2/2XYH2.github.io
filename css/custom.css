@@ -164,3 +164,10 @@ html body[data-theme="dark"] #page-header::before {
   background: #3ecdf1;
   color: #f2f2f2;
 }
+
+body {
+    background-color: #FFFFFF; /* ���ñ�����ɫ */
+    background-image: url('https://cdn.jsdelivr.net/gh/2XYH2/photohouse/Hexo/photos/202408121802290.png'); /* ���ñ���ͼƬ */
+    background-size: cover; /* ȷ������ͼ�񸲸�����ҳ�� */
+    background-repeat: no-repeat; /* �����ظ�����ͼ�� */
+}
