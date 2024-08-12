@@ -125,33 +125,33 @@ pre, code {
     font-size: 18px !important; /* �����к������С */
     line-height: 1.2 !important; /* �����к��и� */
 }
-
-/* ҳ����ͷͼ͸�� */
-#footer {
+/* ȷ��ҳ�ź�ͷͼ�ı���͸����������������ȼ� */
+html body #footer {
     background: transparent !important;
 }
 
-#page-header {
+html body #page-header {
     background: transparent !important;
 }
 
-/* ����ģʽ����͸�� */
-#footer::before {
+/* ȷ������ģʽ�µ�����͸����������������ȼ� */
+html body #footer::before {
     background: transparent !important;
 }
 
-#page-header::before {
+html body #page-header::before {
     background: transparent !important;
 }
 
-/* ҹ��ģʽ����͸�� */
-[data-theme="dark"] #footer::before {
+/* ȷ��ҹ��ģʽ�µ�����͸����������������ȼ� */
+html body[data-theme="dark"] #footer::before {
     background: transparent !important;
 }
 
-[data-theme="dark"] #page-header::before {
+html body[data-theme="dark"] #page-header::before {
     background: transparent !important;
 }
+
 
 /* С��������������ҹģʽ���� */
 /* һ��״̬ */
