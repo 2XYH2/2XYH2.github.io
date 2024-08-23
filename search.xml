@@ -1,30 +1,330 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2024/07/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="你好"><a href="#你好" class="headerlink" title="你好!"></a>你好!</h1><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#inlcude <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+    <title>开始学习C++</title>
+    <url>/2024/08/23/%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0C++/</url>
+    <content><![CDATA[<h1 id="开始学习C"><a href="#开始学习C" class="headerlink" title="开始学习C++"></a>开始学习C++</h1><h2 id="一、头文件"><a href="#一、头文件" class="headerlink" title="一、头文件"></a>一、头文件</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p> <code>iostream</code> 和 <code>stdio.h</code> 是 C++ 和 C 语言中分别用于输入输出操作的头文件。它们都提供了处理输入和输出的功能，但在实现方式和使用方式上有所不同。</p>
+<ol>
+<li><code>iostream</code> 是 C++ 标准库中的头文件，提供了输入输出流的功能。主要的输入输出操作由以下几个对象来完成：</li>
+</ol>
+<ul>
+<li><code>std::cin</code>：标准输入流，用于从键盘读取输入。</li>
+<li><code>std::cout</code>：标准输出流，用于向屏幕输出信息。</li>
+<li><code>std::cerr</code>：标准错误流，用于输出错误信息。</li>
+<li><code>std::clog</code>：标准日志流，用于输出日志信息。</li>
+</ul>
+<ol>
+<li><code>stdio.h</code> 是 C 标准库中的头文件，提供了标准输入输出功能。它主要使用以下几个函数进行输入输出操作：</li>
+</ol>
+<ul>
+<li><code>printf</code>：用于格式化输出。</li>
+<li><code>scanf</code>：用于格式化输入。</li>
+<li><code>fprintf</code> 和 <code>fscanf</code>：用于文件的输入输出操作。</li>
+<li><code>putchar</code> 和 <code>getchar</code>：用于单字符的输入输出。</li>
+</ul>
+<h3 id="2、-主要区别"><a href="#2、-主要区别" class="headerlink" title="2、 主要区别"></a>2、 主要区别</h3><ol>
+<li>语言特性:</li>
+</ol>
+<ul>
+<li><code>iostream</code> 是 C++ 的一部分，体现了面向对象的编程思想，使用了流的概念，提供了更灵活的操作。</li>
+<li><code>stdio.h</code> 是 C 的一部分，采用了传统的函数调用和格式化字符串来进行输入输出操作，符合过程化编程的风格。</li>
+</ul>
+<ol>
+<li>类型安全:</li>
+</ol>
+<ul>
+<li><code>iostream</code> 的操作符 (<code>&lt;&lt;</code> 和 <code>&gt;&gt;</code>) 是类型安全的，可以自动识别类型，不需要像 <code>printf</code> 和 <code>scanf</code> 那样指定格式符。</li>
+<li><code>stdio.h</code> 中的 <code>printf</code> 和 <code>scanf</code> 需要明确指定格式符，如果格式符与变量类型不匹配，可能会导致运行时错误。</li>
+</ul>
+<ol>
+<li>灵活性和可扩展性:</li>
+</ol>
+<ul>
+<li><code>iostream</code> 提供了重载和自定义操作符的能力，可以扩展对自定义类型的支持。</li>
+<li><code>stdio.h</code> 则较为固定，不容易扩展，需要手动处理字符串格式。</li>
+</ul>
+<ol>
+<li>性能:</li>
+</ol>
+<ul>
+<li>在一些情况下，<code>stdio.h</code> 的函数可能比 <code>iostream</code> 的流操作更快，因为 <code>stdio.h</code> 更接近底层硬件操作，开销较小。</li>
+<li><code>iostream</code> 在处理复杂的 I/O 操作时更为便捷和灵活。</li>
+</ul>
+<h2 id="二、命名空间"><a href="#二、命名空间" class="headerlink" title="二、命名空间"></a>二、命名空间</h2><p>命名空间（Namespace）是C++中的一种用于组织代码的机制，主要作用是避免命名冲突。随着程序规模的扩大，不同的库或模块中可能会定义相同名称的变量、函数、类等。命名空间通过提供一个独立的作用域，使得相同名字的标识符可以在不同的命名空间中共存，而不会发生冲突。</p>
+<h3 id="1-、命名空间的定义与使用"><a href="#1-、命名空间的定义与使用" class="headerlink" title="1 、命名空间的定义与使用"></a>1 、命名空间的定义与使用</h3><ol>
+<li><strong>定义命名空间</strong></li>
+</ol>
+<p>命名空间通过 <code>namespace</code> 关键字来定义。其基本语法如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">namespace</span> 命名空间名称 <br>&#123;<br>    <span class="hljs-comment">// 在此处定义的所有标识符都属于该命名空间</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>例如，定义一个名为 <code>MyNamespace</code> 的命名空间：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">namespace</span> Mynamespace <br>&#123;<br>    <span class="hljs-type">int</span> my_variable = <span class="hljs-number">10</span>;<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">my_function</span><span class="hljs-params">()</span></span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-comment">// 函数体</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol>
+<li><strong>访问命名空间中的成员</strong></li>
+</ol>
+<p>要访问命名空间中的成员，需要使用 <code>命名空间名称::成员名称</code> 的形式。例如：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> value = MyNamespace::my_variable;<br>MyNamespace::<span class="hljs-built_in">my_function</span>();<br></code></pre></td></tr></table></figure>
+<ol>
+<li><strong><code>`using</code>关键字</strong></li>
+</ol>
+<p><code>using</code> 关键字可以让你在当前作用域内直接使用命名空间中的成员，而无需每次都加上命名空间前缀。例如：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> MyNamespace;<br><br><span class="hljs-type">int</span> value = my_variable; <span class="hljs-comment">// 等同于 MyNamespace::my_variable</span><br><span class="hljs-built_in">my_function</span>(); <span class="hljs-comment">// 等同于 MyNamespace::my_function()</span><br></code></pre></td></tr></table></figure>
+<p>然而，<code>using namespace</code> 会将整个命名空间的所有成员引入当前作用域，这在大型项目中可能导致命名冲突。因此，一般建议在函数或局部作用域中使用 <code>using</code>，而不是在全局作用域中。</p>
+<h3 id="2、命名空间的嵌套"><a href="#2、命名空间的嵌套" class="headerlink" title="2、命名空间的嵌套"></a>2、命名空间的嵌套</h3><p>命名空间可以嵌套定义，这样可以进一步组织代码。例如：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">namespace</span> OuterNamespace <br>&#123;<br>    <span class="hljs-keyword">namespace</span> InnerNamespace <br>    &#123;<br>        <span class="hljs-type">int</span> inner_variable = <span class="hljs-number">20</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>访问嵌套命名空间中的成员时，需要逐层指定命名空间名称：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> value = OuterNamespace::InnerNamespace::inner_variable;<br></code></pre></td></tr></table></figure>
+<h3 id="3、匿名命名空间"><a href="#3、匿名命名空间" class="headerlink" title="3、匿名命名空间"></a>3、匿名命名空间</h3><p>匿名命名空间是没有名字的命名空间，通常用于限制变量或函数的作用范围，使其仅在定义它们的文件内可见。它的作用类似于 <code>static</code> 关键字修饰的全局变量或函数：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">namespace</span> <br>&#123;<br>    <span class="hljs-type">int</span> internal_variable = <span class="hljs-number">30</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这里的 <code>internal_variable</code> 只能在定义它的文件中访问。</p>
+<h3 id="4、命名空间与预处理"><a href="#4、命名空间与预处理" class="headerlink" title="4、命名空间与预处理"></a>4、命名空间与预处理</h3><p>命名空间是在编译阶段进行处理的，与预处理（如宏定义、头文件包含等）无直接关系。预处理器在编译之前展开宏、处理条件编译等，但命名空间是在编译时解析的。因此，命名空间不受预处理的影响。</p>
+<h3 id="5、using-namespace-std-的使用"><a href="#5、using-namespace-std-的使用" class="headerlink" title="5、using namespace std;的使用"></a>5、<code>using namespace std;</code>的使用</h3><p><code>using namespace std;</code> 是在C++代码中引入标准库命名空间 <code>std</code> 的一种常见方式。<code>std</code> 包含了标准库中的所有内容，如 <code>cout</code>, <code>cin</code>, <code>vector</code>, <code>string</code> 等。</p>
+<p><strong>最佳实践</strong>：</p>
+<ul>
+<li>在头文件中应避免使用 <code>using namespace std;</code>，以防止命名冲突或污染全局命名空间。</li>
+<li>在实现文件中可以根据需要在局部作用域（如函数内部）使用 <code>using namespace std;</code>。</li>
+<li>在小型程序或示例代码中，<code>using namespace std;</code> 在全局作用域中使用通常是可以接受的，但在大型项目中需要慎重。</li>
+</ul>
+<h3 id="6、命名空间的合并"><a href="#6、命名空间的合并" class="headerlink" title="6、命名空间的合并"></a>6、命名空间的合并</h3><ul>
+<li><p><strong>同一命名空间的多个定义</strong>：你可以在不同的文件或同一文件的不同位置对同一个命名空间进行定义。编译器会将这些定义合并到一起，从而形成一个统一的命名空间。所有在这个命名空间中定义的成员（变量、函数、类等）都会属于同一个命名空间。</p>
+</li>
+<li><p><strong>命名空间成员的合并</strong>：命名空间内的成员会自动合并。这意味着在同一命名空间中定义的多个成员会共存，不会相互覆盖或冲突。例如：</p>
+  <figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// File1.cpp</span><br><span class="hljs-keyword">namespace</span> MyNamespace &#123;<br>    <span class="hljs-type">int</span> var1 = <span class="hljs-number">10</span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func1</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-comment">// ...</span><br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// File2.cpp</span><br><span class="hljs-keyword">namespace</span> MyNamespace &#123;<br>    <span class="hljs-type">int</span> var2 = <span class="hljs-number">20</span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">func2</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-comment">// ...</span><br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// Main.cpp</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;File1.cpp&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;File2.cpp&quot;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    MyNamespace::<span class="hljs-built_in">func1</span>();  <span class="hljs-comment">// 可以访问 func1</span><br>    MyNamespace::<span class="hljs-built_in">func2</span>();  <span class="hljs-comment">// 可以访问 func2</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>  在这个例子中，<code>MyNamespace</code> 在 <code>File1.cpp</code> 和 <code>File2.cpp</code> 中定义了不同的成员。最终，这些成员会在编译时合并到一个命名空间中，使得在主程序中可以访问到所有的成员。</p>
+</li>
+</ul>
+<h3 id="7、实际应用中的建议"><a href="#7、实际应用中的建议" class="headerlink" title="7、实际应用中的建议"></a>7、实际应用中的建议</h3><ol>
+<li><strong>避免命名冲突</strong>：在开发库或大型项目时，使用命名空间可以避免与其他库或模块的命名冲突。</li>
+<li><strong>组织代码</strong>：通过将相关功能放入同一命名空间，可以提高代码的可读性和可维护性。</li>
+<li><strong>减少全局污染</strong>：避免在全局作用域中使用 <code>using namespace std;</code>，以减少潜在的命名冲突。</li>
+<li><strong>合并空间</strong>：命名空间名称相同时，编译器会将它们自动合并为一个统一的命名空间，它们的成员也会合并到这个统一的命名空间中，使得在主程序中可以访问到所有的成员。</li>
+<li><strong>避免重复定义</strong>：需要避免在相同命名空间中重复定义同名标识符，合并并不意味着可以容纳重复的定义。</li>
+</ol>
+<h3 id="8、C-与C语言的区别"><a href="#8、C-与C语言的区别" class="headerlink" title="8、C++与C语言的区别"></a>8、C++与C语言的区别</h3><p><strong>C++ 命名空间</strong>：存在但默认不使用。即使头文件包含了命名空间内容，你必须显式引用它们或使用 <code>using</code> 声明。</p>
+<p><strong>C 语言头文件</strong>：没有命名空间概念。包含头文件后，声明的标识符立即可用，编译器和链接器会自动处理声明与定义之间的关联。</p>
+<h2 id="三-、C-标准库"><a href="#三-、C-标准库" class="headerlink" title="三 、C++标准库"></a>三 、C++标准库</h2><h3 id="1、C-标准库中的命名空间"><a href="#1、C-标准库中的命名空间" class="headerlink" title="1、C++ 标准库中的命名空间"></a>1、C++ 标准库中的命名空间</h3><p>C++ 标准库中的命名空间主要是 <code>std</code>，它包含了绝大部分标准库的内容，包括函数、类、对象、模板等。尽管 <code>std</code> 是最主要的命名空间，但 C++ 标准库并不限于此。以下是 C++ 标准库中相关的命名空间以及它们的用途：</p>
+<ol>
+<li><code>std</code> <strong>命名空间</strong></li>
+</ol>
+<p><code>std</code> 是 C++ 标准库的核心命名空间，包含了大部分的标准库组件，包括容器、算法、输入输出、字符串处理、多线程支持等。以下是 <code>std</code> 命名空间中的一些重要内容：</p>
+<ul>
+<li><strong>I/O 流：</strong> <code>std::cin</code>, <code>std::cout</code>, <code>std::cerr</code>, <code>std::clog</code>, <code>std::ifstream</code>, <code>std::ofstream</code>, <code>std::stringstream</code>, <code>std::ostringstream</code>, <code>std::istringstream</code></li>
+<li><strong>容器：</strong> <code>std::vector</code>, <code>std::list</code>, <code>std::deque</code>, <code>std::set</code>, <code>std::map</code>, <code>std::unordered_map</code>, <code>std::unordered_set</code>, <code>std::array</code>, <code>std::stack</code>, <code>std::queue</code>, <code>std::priority_queue</code></li>
+<li><strong>算法：</strong> <code>std::sort</code>, <code>std::find</code>, <code>std::for_each</code>, <code>std::accumulate</code>, <code>std::transform</code></li>
+<li><strong>字符串处理：</strong> <code>std::string</code>, <code>std::wstring</code>, <code>std::u16string</code>, <code>std::u32string</code></li>
+<li><strong>智能指针：</strong> <code>std::shared_ptr</code>, <code>std::unique_ptr</code>, <code>std::weak_ptr</code></li>
+<li><strong>多线程：</strong> <code>std::thread</code>, <code>std::mutex</code>, <code>std::lock_guard</code>, <code>std::unique_lock</code>, <code>std::condition_variable</code>, <code>std::future</code>, <code>std::async</code></li>
+<li><strong>异常处理：</strong> <code>std::exception</code>, <code>std::runtime_error</code>, <code>std::logic_error</code>, <code>std::bad_alloc</code></li>
+</ul>
+<ol>
+<li><code>std::chrono</code> <strong>命名空间</strong></li>
+</ol>
+<p><code>std::chrono</code> 是一个用于时间处理的命名空间，提供了高精度计时功能，能够处理时间点、时间间隔和时钟等。</p>
+<ul>
+<li><strong>时间点与时间间隔：</strong> <code>std::chrono::duration</code>, <code>std::chrono::time_point</code></li>
+<li><strong>时钟类型：</strong> <code>std::chrono::system_clock</code>, <code>std::chrono::steady_clock</code>, <code>std::chrono::high_resolution_clock</code></li>
+<li><strong>时间单位：</strong> <code>std::chrono::milliseconds</code>, <code>std::chrono::seconds</code>, <code>std::chrono::minutes</code></li>
+</ul>
+<ol>
+<li><code>std::placeholders</code> <strong>命名空间</strong></li>
+</ol>
+<p><code>std::placeholders</code> 命名空间用于函数对象的占位符，常与 <code>std::bind</code> 结合使用，以便部分应用函数参数。</p>
+<ul>
+<li><strong>占位符：</strong> <code>std::placeholders::_1</code>, <code>std::placeholders::_2</code>, <code>std::placeholders::_3</code> 等</li>
+</ul>
+<ol>
+<li><code>std::regex</code> <strong>命名空间</strong></li>
+</ol>
+<p><code>std::regex</code> 命名空间提供了正则表达式支持，用于字符串的模式匹配。</p>
+<ul>
+<li><strong>正则表达式类：</strong> <code>std::regex</code>, <code>std::smatch</code>, <code>std::cmatch</code></li>
+<li><strong>正则操作：</strong> <code>std::regex_match</code>, <code>std::regex_search</code>, <code>std::regex_replace</code></li>
+</ul>
+<ol>
+<li><code>std::literals</code> <strong>命名空间</strong></li>
+</ol>
+<p><code>std::literals</code> 提供了一些常用的字面量后缀，帮助简化代码书写。</p>
+<ul>
+<li>子命名空间：<ul>
+<li><code>std::string_literals</code> 提供字符串字面量，如 <code>&quot;hello&quot;s</code></li>
+<li><code>std::chrono_literals</code> 提供时间字面量，如 <code>100ms</code>, <code>1h</code></li>
+<li><code>std::complex_literals</code> 提供复数字面量，如 <code>1i</code></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><code>std::this_thread</code> <strong>命名空间</strong></li>
+</ol>
+<p><code>std::this_thread</code> 提供了与当前线程相关的功能。</p>
+<ul>
+<li><strong>线程相关函数：</strong> <code>std::this_thread::sleep_for</code>, <code>std::this_thread::sleep_until</code>, <code>std::this_thread::yield</code></li>
+</ul>
+<ol>
+<li><code>std::filesystem</code> <strong>命名空间</strong></li>
+</ol>
+<p><code>std::filesystem</code> 提供了文件系统操作的支持（C++17 引入）。</p>
+<ul>
+<li><strong>路径与文件操作：</strong> <code>std::filesystem::path</code>, <code>std::filesystem::create_directory</code>, <code>std::filesystem::remove</code>, <code>std::filesystem::exists</code></li>
+</ul>
+<ol>
+<li><code>std::experimental</code> <strong>命名空间</strong></li>
+</ol>
+<p><code>std::experimental</code> 包含了实验性功能或尚未成为正式标准的一些功能。这些功能可能在未来的 C++ 标准中正式采用。</p>
+<ul>
+<li><strong>例如：</strong> <code>std::experimental::filesystem</code>（在 C++17 中转移到 <code>std::filesystem</code>）</li>
+</ul>
+<ol>
+<li><code>std::pmr</code> <strong>命名空间</strong></li>
+</ol>
+<p><code>std::pmr</code> 提供了与内存资源管理相关的功能（C++17 引入），主要用于自定义分配器的场景。</p>
+<ul>
+<li><strong>内存资源类：</strong> <code>std::pmr::memory_resource</code>, <code>std::pmr::monotonic_buffer_resource</code></li>
+<li><strong>pmr 容器：</strong> <code>std::pmr::vector</code>, <code>std::pmr::string</code></li>
+</ul>
+<ol>
+<li><strong>总结</strong></li>
+</ol>
+<p>C++ 标准库的主要命名空间是 <code>std</code>，但它根据不同的功能划分了多个子命名空间，如 <code>std::chrono</code>（时间处理）、<code>std::regex</code>（正则表达式）、<code>std::filesystem</code>（文件系统）等。这些命名空间中的组件共同组成了 C++ 标准库的功能。</p>
+<h3 id="2、C-标准库中的头文件"><a href="#2、C-标准库中的头文件" class="headerlink" title="2、C++ 标准库中的头文件"></a>2、C++ 标准库中的头文件</h3><p>C++ 标准库提供了大量的头文件，这些头文件包含了各种类、函数和模板，用于实现常见的编程功能。以下是一些常用的头文件及其对应的类或功能：</p>
+<p><strong>输入输出流</strong></p>
+<ul>
+<li><strong><code>&lt;iostream&gt;</code></strong>：提供输入输出流类，如 <code>std::cin</code>, <code>std::cout</code>, <code>std::cerr</code>。</li>
+<li><strong><code>&lt;fstream&gt;</code></strong>：提供文件输入输出流类，如 <code>std::ifstream</code>, <code>std::ofstream</code>, <code>std::fstream</code>。</li>
+</ul>
+<p><strong>容器</strong></p>
+<ul>
+<li><strong><code>&lt;vector&gt;</code></strong>：动态数组容器，类 <code>std::vector</code>。</li>
+<li><strong><code>&lt;list&gt;</code></strong>：双向链表容器，类 <code>std::list</code>。</li>
+<li><strong><code>&lt;map&gt;</code></strong>：关联容器，键值对存储，类 <code>std::map</code>。</li>
+<li><strong><code>&lt;set&gt;</code></strong>：集合容器，类 <code>std::set</code>。</li>
+<li><strong><code>&lt;deque&gt;</code></strong>：双端队列容器，类 <code>std::deque</code>。</li>
+</ul>
+<p>算法</p>
+<ul>
+<li><strong><code>&lt;algorithm&gt;</code></strong>：提供通用算法，如排序、查找、复制、交换等。</li>
+<li><strong><code>&lt;numeric&gt;</code></strong>：提供数值计算的算法，如累加、乘积、内积等。</li>
+</ul>
+<p>字符串处理</p>
+<ul>
+<li><strong><code>&lt;string&gt;</code></strong>：提供字符串类 <code>std::string</code> 及其相关操作。</li>
+</ul>
+<p>异常处理</p>
+<ul>
+<li><strong><code>&lt;stdexcept&gt;</code></strong>：定义标准异常类，如 <code>std::exception</code>, <code>std::runtime_error</code>。</li>
+</ul>
+<p>多线程</p>
+<ul>
+<li><strong><code>&lt;thread&gt;</code></strong>：提供多线程支持，类 <code>std::thread</code>。</li>
+<li><strong><code>&lt;mutex&gt;</code></strong>：提供互斥锁，类 <code>std::mutex</code>。</li>
+</ul>
+<p>智能指针</p>
+<ul>
+<li><strong><code>&lt;memory&gt;</code></strong>：提供智能指针类，如 <code>std::shared_ptr</code>, <code>std::unique_ptr</code>, <code>std::weak_ptr</code>。</li>
+</ul>
+<h3 id="3、C-标准库与-STL-的关系"><a href="#3、C-标准库与-STL-的关系" class="headerlink" title="3、C++ 标准库与 STL 的关系"></a>3、C++ 标准库与 STL 的关系</h3><p><strong>STL</strong>（Standard Template Library，标准模板库）实际上是 C++ 标准库的一部分，但它并不是整个标准库。STL 是 C++ 标准库中提供的一套模板类和函数，主要包括容器（如 <code>vector</code>、<code>list</code>）、算法（如 <code>sort</code>、<code>find</code>）和迭代器。这些组件提供了泛型编程的能力，允许你编写独立于具体数据类型的代码。</p>
+<p><strong>区别与联系</strong></p>
+<ul>
+<li><strong>STL 是标准库的一部分</strong>：标准库包含了 STL，但也包含了其他不属于 STL 的部分，如输入输出流、字符串处理、多线程支持等。</li>
+<li><strong>STL 的组成</strong>：<ul>
+<li><strong>容器</strong>：如 <code>std::vector</code>, <code>std::list</code>, <code>std::map</code> 等。</li>
+<li><strong>算法</strong>：如 <code>std::sort</code>, <code>std::find</code>, <code>std::accumulate</code> 等。</li>
+<li><strong>迭代器</strong>：如输入迭代器、输出迭代器、双向迭代器等，用于遍历容器。</li>
+</ul>
+</li>
+<li><strong>标准库的范围更广</strong>：除了 STL 的组件外，标准库还包括了输入输出功能、异常处理、正则表达式、多线程支持、智能指针等。</li>
+</ul>
+<h2 id="四、I-O（输入输出）"><a href="#四、I-O（输入输出）" class="headerlink" title="四、I/O（输入输出）"></a>四、I/O（输入输出）</h2><h3 id="1、C-的输入过程"><a href="#1、C-的输入过程" class="headerlink" title="1、C++ 的输入过程"></a>1、C++ 的输入过程</h3><ol>
+<li><p><strong>用户输入</strong>：当用户在键盘上输入数据时，这些数据首先被存储在一个称为“输入缓冲区”的内存区域中。这个缓冲区由操作系统管理，用于暂时存放输入的数据。</p>
+</li>
+<li><p><strong>数据进入缓冲区</strong>：用户输入的数据通过标准输入流（<code>std::cin</code>）进入输入缓冲区。在用户按下回车键（或其他输入结束符）后，输入缓冲区中的数据被视为完整的输入，准备供程序读取。</p>
+</li>
+<li><p><strong>数据读取和类型转换</strong>：</p>
+<ul>
+<li><p><strong><code>std::cin</code> 的作用</strong>：<code>std::cin</code> 会从输入缓冲区读取数据，并根据程序中定义的数据对象的类型，将字符数据转换为该类型的数据。这种转换通常被称为“格式化输输入”。</p>
+</li>
+<li><p><strong><code>&gt;&gt;</code> 运算符</strong>：<code>&gt;&gt;</code> 运算符用于将转换后的数据从流中提取，并赋值给相应的数据对象。例如，如果你使用 <code>std::cin &gt;&gt; int_var;</code>，输入缓冲区中的字符数据会被转换为整数类型，并存储在 <code>int_var</code> 变量中。</p>
+</li>
+</ul>
+</li>
+<li><p>流程图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/2XYH2/photohouse/Hexo/photos/202408232008038.png" alt=""></p>
+</li>
+</ol>
+<h3 id="2、C-的输出过程"><a href="#2、C-的输出过程" class="headerlink" title="2、C++ 的输出过程"></a>2、C++ 的输出过程</h3><ol>
+<li><strong>数据进入输出缓冲区</strong>：在 C++ 中，输出数据通过标准输出流（<code>std::cout</code>）进入一个称为“输出缓冲区”的区域。这个缓冲区暂时存储将要输出的数据，以便优化输出操作的性能。</li>
+<li><strong>数据的智能转换</strong>：<ul>
+<li><strong><code>std::cout</code> 的作用</strong>：<code>std::cout</code> 负责将数据对象的内容转换为适合输出的字符或字符串形式。这种转换通常被称为“格式化输出”。</li>
+<li><strong><code>&lt;&lt;</code> 运算符</strong>：<code>&lt;&lt;</code> 运算符将数据从程序中推送到输出流，然后暂时存储在输出缓冲区中。</li>
+</ul>
+</li>
+<li><strong>数据输出到设备</strong>：输出缓冲区中的数据会根据缓冲区的刷新机制（如缓冲区满、行缓冲、显式刷新、程序结束）通过标准输出流刷新到输出设备上（通常是屏幕）。</li>
+</ol>
+<h3 id="3、C-语言的输入过程"><a href="#3、C-语言的输入过程" class="headerlink" title="3、C 语言的输入过程"></a>3、C 语言的输入过程</h3><ol>
+<li><strong>用户输入</strong>：在 C 语言中，用户输入的数据首先也被存储在输入缓冲区中，类似于 C++。</li>
+<li><strong>数据进入缓冲区</strong>：输入的数据通过标准输入流（<code>stdin</code>）进入输入缓冲区。当用户按下“回车”键后，缓冲区中的数据被视为完整输入。</li>
+<li><strong>数据读取和格式转换</strong>：<ul>
+<li><strong><code>scanf</code> 函数的作用</strong>：<code>scanf</code> 函数从输入缓冲区读取数据，并根据指定的格式字符串（如 <code>%d</code>, <code>%f</code> 等）将字符数据转换为相应类型的数据。</li>
+<li><strong>指针赋值</strong>：转换后的数据通过指针传递给指定的变量。例如，<code>scanf(&quot;%d&quot;, &amp;int_var);</code> 将缓冲区中的字符数据解析为整数，并赋值给 <code>int_var</code> 变量。</li>
+</ul>
+</li>
+</ol>
+<h3 id="4、C-语言的输出过程"><a href="#4、C-语言的输出过程" class="headerlink" title="4、C 语言的输出过程"></a>4、C 语言的输出过程</h3><ol>
+<li><strong>数据进入输出缓冲区</strong>：输出数据通过标准输出流（<code>stdout</code>）进入输出缓冲区，类似于 C++。</li>
+<li><strong>数据的格式转换</strong>：<ul>
+<li><strong><code>printf</code> 函数的作用</strong>：<code>printf</code> 函数根据指定的格式字符串将数据对象的内容转换为适合输出的字符或字符串形式。</li>
+<li><strong>格式化数据</strong>：例如，<code>printf(&quot;%d&quot;, int_var);</code> 将整数 <code>int_var</code> 转换为字符形式并存储在输出缓冲区中。</li>
+</ul>
+</li>
+<li><strong>数据输出到设备</strong>：与 C++ 类似，输出缓冲区中的数据会根据缓冲区的刷新机制（如缓冲区满、行缓冲、显式刷新、程序结束）通过标准输出流刷新到输出设备上。</li>
+</ol>
+<h3 id="5、总结"><a href="#5、总结" class="headerlink" title="5、总结"></a>5、总结</h3><ul>
+<li><strong>输入</strong>：无论在 C++ 还是 C 中，输入数据都会先进入输入缓冲区，然后通过标准输入流和特定的函数（如 <code>std::cin</code> 或 <code>scanf</code>）读取和处理。数据会根据指定的类型进行格式转换，最终赋值给相应的变量。</li>
+<li><strong>输出</strong>：输出数据会先进入输出缓冲区，然后通过标准输出流和特定的函数（如 <code>std::cout</code> 或 <code>printf</code>）进行格式化处理。最终，数据会根据缓冲区的刷新机制输出到设备上。</li>
+</ul>
+<h2 id="五、换行符"><a href="#五、换行符" class="headerlink" title="五、换行符"></a>五、换行符</h2><p><code>endl</code> 和 <code>\n</code> 都是用于在C++中输出换行符的方式，但它们有一些重要的区别。</p>
+<h3 id="1、-n-换行符"><a href="#1、-n-换行符" class="headerlink" title="1、\n 换行符"></a>1、<code>\n</code> 换行符</h3><ul>
+<li><strong>概念</strong>: <code>\n</code> 是一个表示换行的字符，称为“换行符”。</li>
+<li><strong>使用</strong>: 当使用 <code>\n</code> 时，它会在控制台输出一个换行，但不会做其他任何操作。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br>    <br>    cout &lt;&lt; <span class="hljs-string">&quot;Hello\n&quot;</span>;<br>    cout &lt;&lt; <span class="hljs-string">&quot;World\n&quot;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">Hello<br>World<br><br></code></pre></td></tr></table></figure>
+<p>在这个例子中，<code>\n</code> 使得“World”在新的一行输出。</p>
+<h3 id="2、endl-操作符"><a href="#2、endl-操作符" class="headerlink" title="2、endl 操作符"></a>2、<code>endl</code> 操作符</h3><ul>
+<li><strong>概念</strong>: <code>endl</code> 是 C++ 标准库中的一个操纵符，用于在输出流中插入换行符并刷新输出缓冲区。</li>
+<li><strong>使用</strong>: 当使用 <code>std::endl</code> 时，它不仅会在控制台输出一个换行符，还会强制刷新输出缓冲区。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br>    <br>    cout &lt;&lt; <span class="hljs-string">&quot;Hello&quot;</span> &lt;&lt; endl;<br>    cout &lt;&lt; <span class="hljs-string">&quot;World&quot;</span> &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">Hello<br>World<br><br></code></pre></td></tr></table></figure>
+<h3 id="3、区别总结"><a href="#3、区别总结" class="headerlink" title="3、区别总结"></a>3、区别总结</h3><ul>
+<li><strong>换行效果</strong>: <code>\n</code> 和 <code>endl</code> 都可以实现换行效果，在输出内容到控制台时表现一致。</li>
+<li><strong>缓冲区刷新</strong>：对于行缓冲的情况，遇到 <code>\n</code> 或<code>endl</code> 时会刷新缓冲区。而在全缓冲的情况下，<code>endl</code> 会强制刷新输出缓冲区，而 <code>\n</code> 不会。（缓冲区刷新意味着程序会立即将缓冲区中的内容输出到控制台或文件中，确保输出的内容立即可见。这在需要立即看到输出结果的场景中是很有用的）。</li>
+</ul>
+<h3 id="4、何时使用"><a href="#4、何时使用" class="headerlink" title="4、何时使用"></a>4、何时使用</h3><ul>
+<li><strong>性能考量</strong>: 由于 <code>endl</code> 每次都会刷新缓冲区，频繁使用它可能会影响程序的性能。通常情况下，如果不需要立即刷新输出缓冲区，可以使用 <code>\n</code> 来代替 <code>endl</code>。</li>
+<li><strong>特殊场景</strong>: 如果你确实需要立即将缓冲区中的内容输出到控制台，比如在调试或实时日志记录中，使用 <code>endl</code> 更为合适。</li>
+</ul>
+<h3 id="5、总结-1"><a href="#5、总结-1" class="headerlink" title="5、总结"></a>5、总结</h3><ul>
+<li>在 <strong>行缓冲</strong> 的情况下，<code>std::endl</code> 和 <code>\n</code> 的行为看起来相似，但 <code>std::endl</code> 总是会强制刷新缓冲区。</li>
+<li>在 <strong>全缓冲</strong> 的情况下，<code>std::endl</code> 强制刷新缓冲区，而 <code>\n</code> 不会，这可能导致延迟输出。</li>
+<li><strong><code>std::endl</code> 用于确保输出立即生效，<code>\n</code> 用于性能优先的场景</strong>。</li>
+</ul>
 ]]></content>
       <categories>
-        <category>C语言</category>
+        <category>C++</category>
       </categories>
       <tags>
-        <tag>C语言</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2024/07/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>我的第一篇博客</title>
+    <url>/2024/07/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World !"></a>Hello World !</h1><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    cout &lt;&lt; <span class="hljs-string">&quot;Hello World!&quot;</span>;<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
       <tags>
         <tag>Hello World!</tag>
       </tags>
