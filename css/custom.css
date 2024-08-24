@@ -463,29 +463,6 @@ div#archive {
   color: #ffffff;
 }
 
-
-/*�˵�ͼ���С*/
-svg.menu_icon {
-  width: 1.80em;
-  height: 1.80em;
-  vertical-align: -0.38em;
-  fill: currentColor;
-  overflow: hidden;
-  margin-left: 0.3em; /* ������߾� */
-  margin-right: 0.3em; /* �����ұ߾� */
-}
-
-/*�罻ͼ���С*/
-svg.social_icon {
-  width: 1.38em;
-  height: 1.38em;
-  vertical-align: -0.52em;
-  fill: currentColor;
-  overflow: hidden;
-  margin-left: 0.3em; /* ������߾� */
-  margin-right: 0.3em; /* �����ұ߾� */
-}
-
 /* ֡�ʼ�� */
 #fps {
   position: fixed;
@@ -505,6 +482,14 @@ svg.social_icon {
   backdrop-filter: var(--backdrop-filter);
   padding: 4px;
   border-radius: 4px;
+}
+
+svg.social_icon {
+  width: 1.38em;
+  height: 1.38em;
+  vertical-align: -0.24em;
+  fill: currentColor;
+  overflow: hidden;
 }
 
 /* ѩ����Ч */
