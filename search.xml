@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>计算机入门基础</title>
+    <url>/2024/08/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="一、-计算机硬件与冯·诺依曼架构的详细介绍"><a href="#一、-计算机硬件与冯·诺依曼架构的详细介绍" class="headerlink" title="一、 计算机硬件与冯·诺依曼架构的详细介绍"></a>一、 计算机硬件与冯·诺依曼架构的详细介绍</h2><h3 id="1-冯·诺依曼架构"><a href="#1-冯·诺依曼架构" class="headerlink" title="1. 冯·诺依曼架构"></a>1. 冯·诺依曼架构</h3><p>冯·诺依曼架构（Von Neumann Architecture）是现代计算机的基础架构。它由以下几个主要部分组成：</p>
+<ul>
+<li><strong>输入设备</strong>: 允许用户向计算机输入数据或指令，如键盘、鼠标、终端等。</li>
+<li><strong>CPU（中央处理器）</strong>: 包含运算器和控制器两部分，是计算机的大脑，用于执行指令和处理数据。<ul>
+<li><strong>运算器</strong>: 负责执行各种算术和逻辑运算。</li>
+<li><strong>控制器</strong>: 负责控制整个计算机系统的操作，包括指令的读取、解释和执行。</li>
+</ul>
+</li>
+<li><strong>外部存储器</strong>: 用于长期保存数据和程序（断电后不会丢失数据），如机械硬盘（HHD）、固态硬盘（SSD）、光盘、磁带等。</li>
+<li><strong>输出设备</strong>: 将计算结果或信息传递给用户，如显示器、打印机、终端等。</li>
+</ul>
+<p>这类架构强调了数据和指令存储在同一存储器中，并通过相同的总线传输，因此也被称为“存储程序计算机”。</p>
+<h3 id="2-计算机硬件"><a href="#2-计算机硬件" class="headerlink" title="2. 计算机硬件"></a>2. 计算机硬件</h3><p>计算机硬件可以分为以下几部分：</p>
+<ul>
+<li><p><strong>主板</strong>: 主板是计算机的核心硬件之一，连接了CPU、内存、存储设备、显卡等其他硬件。主板上的各种芯片和电路负责管理各部件之间的数据传输和协调工作。</p>
+</li>
+<li><p><strong>CPU（中央处理器）</strong>: CPU是计算机的核心处理单元，负责执行指令和处理数据。现代的CPU通常集成多个核心（多核），以提高计算性能。</p>
+</li>
+<li><p><strong>内存（RAM）</strong>: 内存是计算机的短期存储器，负责存储当前正在运行的程序和数据。它的速度非常快，但在关机断电时数据会丢失。</p>
+</li>
+<li><p><strong>硬盘</strong>: 硬盘是计算机的长期存储设备，用于存储操作系统、应用程序以及用户数据。常见的硬盘有机械硬盘（HDD）和固态硬盘（SSD），其中SSD的速度比HDD更快。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>开始学习C++</title>
     <url>/2024/08/23/%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0C++/</url>
     <content><![CDATA[<h2 id="一、头文件"><a href="#一、头文件" class="headerlink" title="一、头文件"></a>一、头文件</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p> <code>iostream</code> 和 <code>stdio.h</code> 是 C++ 和 C 语言中分别用于输入输出操作的头文件。它们都提供了处理输入和输出的功能，但在实现方式和使用方式上有所不同。</p>
@@ -375,40 +409,6 @@
       </categories>
       <tags>
         <tag>Hello World!</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机入门基础</title>
-    <url>/2024/08/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="一、-计算机硬件与冯·诺依曼架构的详细介绍"><a href="#一、-计算机硬件与冯·诺依曼架构的详细介绍" class="headerlink" title="一、 计算机硬件与冯·诺依曼架构的详细介绍"></a>一、 计算机硬件与冯·诺依曼架构的详细介绍</h2><h3 id="1-冯·诺依曼架构"><a href="#1-冯·诺依曼架构" class="headerlink" title="1. 冯·诺依曼架构"></a>1. 冯·诺依曼架构</h3><p>冯·诺依曼架构（Von Neumann Architecture）是现代计算机的基础架构。它由以下几个主要部分组成：</p>
-<ul>
-<li><strong>输入设备</strong>: 允许用户向计算机输入数据或指令，如键盘、鼠标、终端等。</li>
-<li><strong>CPU（中央处理器）</strong>: 包含运算器和控制器两部分，是计算机的大脑，用于执行指令和处理数据。<ul>
-<li><strong>运算器</strong>: 负责执行各种算术和逻辑运算。</li>
-<li><strong>控制器</strong>: 负责控制整个计算机系统的操作，包括指令的读取、解释和执行。</li>
-</ul>
-</li>
-<li><strong>外部存储器</strong>: 用于长期保存数据和程序（断电后不会丢失数据），如机械硬盘（HHD）、固态硬盘（SSD）、光盘、磁带等。</li>
-<li><strong>输出设备</strong>: 将计算结果或信息传递给用户，如显示器、打印机、终端等。</li>
-</ul>
-<p>这类架构强调了数据和指令存储在同一存储器中，并通过相同的总线传输，因此也被称为“存储程序计算机”。</p>
-<h3 id="2-计算机硬件"><a href="#2-计算机硬件" class="headerlink" title="2. 计算机硬件"></a>2. 计算机硬件</h3><p>计算机硬件可以分为以下几部分：</p>
-<ul>
-<li><p><strong>主板</strong>: 主板是计算机的核心硬件之一，连接了CPU、内存、存储设备、显卡等其他硬件。主板上的各种芯片和电路负责管理各部件之间的数据传输和协调工作。</p>
-</li>
-<li><p><strong>CPU（中央处理器）</strong>: CPU是计算机的核心处理单元，负责执行指令和处理数据。现代的CPU通常集成多个核心（多核），以提高计算性能。</p>
-</li>
-<li><p><strong>内存（RAM）</strong>: 内存是计算机的短期存储器，负责存储当前正在运行的程序和数据。它的速度非常快，但在关机断电时数据会丢失。</p>
-</li>
-<li><p><strong>硬盘</strong>: 硬盘是计算机的长期存储设备，用于存储操作系统、应用程序以及用户数据。常见的硬盘有机械硬盘（HDD）和固态硬盘（SSD），其中SSD的速度比HDD更快。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>计算机</tag>
       </tags>
   </entry>
 </search>

@@ -484,12 +484,15 @@ div#archive {
   border-radius: 4px;
 }
 
+/* �����ͼ�� */
 svg.social_icon {
   width: 1.38em;
   height: 1.38em;
   vertical-align: -0.24em;
   fill: currentColor;
   overflow: hidden;
+  margin-left: 2px; /* ������߾������ƾ��� */
+  margin-right: 3px; /* �����ұ߾������ƾ��� */
 }
 
 /* ѩ����Ч */
