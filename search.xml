@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>我的第一篇博客</title>
+    <url>/2024/07/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World !"></a>Hello World !</h1><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    cout &lt;&lt; <span class="hljs-string">&quot;Hello World!&quot;</span>;<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Hello World!</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>开始学习C++</title>
     <url>/2024/08/23/%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0C++/</url>
     <content><![CDATA[<h1 id="开始学习C"><a href="#开始学习C" class="headerlink" title="开始学习C++"></a>开始学习C++</h1><h2 id="一、头文件"><a href="#一、头文件" class="headerlink" title="一、头文件"></a>一、头文件</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p> <code>iostream</code> 和 <code>stdio.h</code> 是 C++ 和 C 语言中分别用于输入输出操作的头文件。它们都提供了处理输入和输出的功能，但在实现方式和使用方式上有所不同。</p>
@@ -246,7 +258,6 @@
 <li><p><strong>流程图：</strong></p>
 </li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/2XYH2/photohouse@88618346c4c138daebbb0a2613c51c00e98299ea/Hexo/photos/202408240140743.png" alt=""></p>
 <h3 id="2、C-的输出过程"><a href="#2、C-的输出过程" class="headerlink" title="2、C++ 的输出过程"></a>2、C++ 的输出过程</h3><ol>
 <li><p><strong>数据的智能转换</strong>：</p>
 <ul>
@@ -259,7 +270,6 @@
 <li><p><strong>数据输出到设备</strong>：输出缓冲区中的数据会根据缓冲区的刷新机制（如缓冲区满、行缓冲、显式刷新、程序结束）通过标准输出流（<code>std::cout</code>）刷新到输出设备上（通常是屏幕）。</p>
 </li>
 <li><p><strong>流程图：</strong></p>
-<p> <img src="https://cdn.jsdelivr.net/gh/2XYH2/photohouse@88618346c4c138daebbb0a2613c51c00e98299ea/Hexo/photos/202408240129816.png" alt=""></p>
 </li>
 </ol>
 <h3 id="3、C-语言的输入过程"><a href="#3、C-语言的输入过程" class="headerlink" title="3、C 语言的输入过程"></a>3、C 语言的输入过程</h3><ol>
@@ -274,7 +284,6 @@
 </ul>
 </li>
 <li><p><strong>流程图：</strong></p>
-<p> <img src="https://cdn.jsdelivr.net/gh/2XYH2/photohouse@88618346c4c138daebbb0a2613c51c00e98299ea/Hexo/photos/202408240135064.png" alt=""></p>
 </li>
 </ol>
 <h3 id="4、C-语言的输出过程"><a href="#4、C-语言的输出过程" class="headerlink" title="4、C 语言的输出过程"></a>4、C 语言的输出过程</h3><ol>
@@ -289,7 +298,6 @@
 <li><p><strong>数据输出到设备</strong>：与 C++ 类似，输出缓冲区中的数据会根据缓冲区的刷新机制（如缓冲区满、行缓冲、显式刷新、程序结束）通过标准输出流（<code>stdout</code>）刷新到输出设备上（通常是屏幕）。</p>
 </li>
 <li><p><strong>流程图：</strong></p>
-<p> <img src="https://cdn.jsdelivr.net/gh/2XYH2/photohouse@88618346c4c138daebbb0a2613c51c00e98299ea/Hexo/photos/202408240135814.png" alt=""></p>
 </li>
 </ol>
 <h3 id="5、总结"><a href="#5、总结" class="headerlink" title="5、总结"></a>5、总结</h3><ul>
@@ -331,18 +339,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的第一篇博客</title>
-    <url>/2024/07/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World !"></a>Hello World !</h1><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    cout &lt;&lt; <span class="hljs-string">&quot;Hello World!&quot;</span>;<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>Hello World!</tag>
       </tags>
   </entry>
 </search>
