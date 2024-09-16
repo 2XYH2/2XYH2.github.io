@@ -511,3 +511,18 @@ svg.social_icon {
 [data-theme="dark"] #snow{
   display: none;
 }
+
+/* ���������С */
+p {
+    font-size: 18px;
+}
+/* �����б� */
+.text-ol {
+  font-size: 18px; /* �ı��������б��������С */
+}
+
+/* �����б� */
+ul {
+    font-size: 18px;
+}
+ 
