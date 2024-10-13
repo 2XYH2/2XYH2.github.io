@@ -459,7 +459,7 @@
 </li>
 <li><p><strong>数据读取和类型转换</strong>：</p>
 <ul>
-<li><p><strong><code>std::cin</code> 的作用</strong>：<code>std::cin</code> 会从输入缓冲区读取数据，并根据程序中定义的数据对象的类型，将字符数据转换为该类型的数据。这种转换通常被称为“格式化输输入”。</p>
+<li><p><strong><code>std::cin</code> 的作用</strong>：<code>std::cin</code> 会从输入缓冲区读取数据，并根据程序中定义的数据对象的类型，将字符数据智能转换为该类型的数据。</p>
 </li>
 <li><p><strong><code>&gt;&gt;</code> 运算符</strong>：<code>&gt;&gt;</code> 运算符用于将转换后的数据从流中提取，并赋值给相应的数据对象。例如，如果你使用 <code>std::cin &gt;&gt; int_var;</code>，输入缓冲区中的字符数据会被转换为整数类型，并存储在 <code>int_var</code> 变量中。</p>
 </li>
@@ -472,7 +472,7 @@
 <h2 id="2、C-的输出过程"><a href="#2、C-的输出过程" class="headerlink" title="2、C++ 的输出过程"></a>2、C++ 的输出过程</h2><ol>
 <li><p><strong>数据的智能转换</strong>：</p>
 <ul>
-<li><p><strong><code>std::cout</code> 的作用</strong>：<code>std::cout</code> 负责将数据对象的内容转换为适合输出的字符或字符串形式。这种转换通常被称为“格式化输出”。</p>
+<li><p><strong><code>std::cout</code> 的作用</strong>：<code>std::cout</code> 负责将数据对象的内容智能转换为适合输出的字符或字符串形式。</p>
 </li>
 <li><p><strong><code>&lt;&lt;</code> 运算符</strong>：<code>&lt;&lt;</code> 运算符将数据从程序中推送到输出流，然后暂时存储在输出缓冲区中。</p>
 </li>
@@ -493,7 +493,7 @@
 </li>
 <li><p><strong>数据读取和格式转换</strong>：</p>
 <ul>
-<li><p><strong><code>scanf</code> 函数的作用</strong>：<code>scanf</code> 函数通过标准输入流（<code>stdin</code>）从输入缓冲区读取数据，并根据指定的格式字符串（如 <code>%d</code>, <code>%f</code> 等）将字符数据转换为相应类型的数据。</p>
+<li><p><strong><code>scanf</code> 函数的作用</strong>：<code>scanf</code> 函数通过标准输入流（<code>stdin</code>）从输入缓冲区读取数据，并根据指定的格式字符串（如 <code>%d</code>, <code>%f</code> 等）将字符数据转换为相应类型的数据。这种转换通常被称为“格式化输输入”。</p>
 </li>
 <li><p><strong>指针赋值</strong>：转换后的数据通过指针传递给指定的变量。例如，<code>scanf(&quot;%d&quot;, &amp;int_var);</code> 将缓冲区中的字符数据解析为整数，并赋值给 <code>int_var</code> 变量。</p>
 </li>
@@ -506,7 +506,7 @@
 <h2 id="4、C-语言的输出过程"><a href="#4、C-语言的输出过程" class="headerlink" title="4、C 语言的输出过程"></a>4、C 语言的输出过程</h2><ol>
 <li><p><strong>数据的格式转换</strong>：</p>
 <ul>
-<li><p><strong><code>printf</code> 函数的作用</strong>：<code>printf</code> 函数根据指定的格式字符串将数据对象的内容转换为适合输出的字符或字符串形式。</p>
+<li><p><strong><code>printf</code> 函数的作用</strong>：<code>printf</code> 函数根据指定的格式转换将数据对象的内容转换为适合输出的字符或字符串形式，这种转换通常被称为“格式化输出”。</p>
 </li>
 <li><p><strong>格式化数据</strong>：例如，<code>printf(&quot;%d&quot;, int_var);</code> 将整数 <code>int_var</code> 转换为字符形式并存储在输出缓冲区中。</p>
 </li>
@@ -521,9 +521,9 @@
 </li>
 </ol>
 <h2 id="5、总结"><a href="#5、总结" class="headerlink" title="5、总结"></a>5、总结</h2><ol>
-<li><p><strong>输入</strong>：无论在 C++ 还是 C 中，输入数据都会先通过标准输入流进入输入缓冲区，然后数据会通过标准输入流被全局对象或者特定的函数（如 <code>std::cin</code> 或 <code>scanf</code>）读取和处理。数据会根据指定的类型进行格式转换，最终赋值给相应的变量。</p>
+<li><p><strong>输入</strong>：无论在 C++ 还是 C 中，输入数据都会先通过标准输入流进入输入缓冲区，然后数据会通过标准输入流被全局对象或者特定的函数（如 <code>std::cin</code> 或 <code>scanf</code>）读取和处理。数据会根据指定的类型进行（<strong>智能</strong>或<strong>格式化</strong>）转换，最终赋值给相应的变量。</p>
 </li>
-<li><p><strong>输出</strong>：无论在 C++ 还是 C 中，数据首先会被全局对象或者特定的函数（如 <code>std::cout</code> 或 <code>printf</code>）进行格式化处理，然后数据通过标准输出流进入输出缓冲区，最终数据会根据缓冲区的刷新机制，通过标准输出流刷新到输出设备上。</p>
+<li><p><strong>输出</strong>：无论在 C++ 还是 C 中，数据首先会被全局对象或者特定的函数（如 <code>std::cout</code> 或 <code>printf</code>）进行（<strong>智能</strong>或<strong>格式化</strong>）处理，然后数据通过标准输出流进入输出缓冲区，最终数据会根据缓冲区的刷新机制，通过标准输出流刷新到输出设备上。</p>
 </li>
 </ol>
 <p>无论在 C++ 还是 C 中，输入输出操作都依赖于标准流和缓冲区的机制，通过全局对象或者特定的函数实现数据的读取、格式化处理和输出。</p>
