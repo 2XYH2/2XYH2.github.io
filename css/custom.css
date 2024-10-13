@@ -12,7 +12,7 @@
     background: var(--hl-bg) !important; /* ʹ�ö���ı�����ɫ */
     color: var(--hl-color) !important; /* ʹ�ö����Ĭ��������ɫ */
     font-size: 18px !important; /* ���������С */
-    line-height: 1.2 !important; /* �����и� */
+    line-height: 1.4 !important; /* �����и� */
 }
 
 .hljs-toolbar {
@@ -25,12 +25,12 @@
     background: var(--hlnumber-bg) !important; /* �кű�����ɫ */
     color: var(--hlnumber-color) !important; /* �к�������ɫ */
     font-size: 18px !important; /* �����к������С */
-    line-height: 1.2 !important; /* �����к��и� */
+    line-height: 1.4 !important; /* �����к��и� */
 }
 
 pre, code {
     font-size: 18px !important; /* ���������С */
-    line-height: 1.2 !important; /* �����и� */
+    line-height: 1.4 !important; /* �����и� */
 }
 
 /* VS2022 ��ɫ���� */
@@ -123,7 +123,7 @@ pre, code {
 /* Ϊ��ȷ���кźʹ������Ӧ�����С�ı仯 */
 .hljs-ln-line {
     font-size: 18px !important; /* �����к������С */
-    line-height: 1.2 !important; /* �����к��и� */
+    line-height: 1.4 !important; /* �����к��и� */
 }
 /* ȷ��ҳ�ź�ͷͼ�ı���͸����������������ȼ� */
 html body #footer {
