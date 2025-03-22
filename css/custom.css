@@ -1,111 +1,111 @@
-/* ����������� */
+/* 高亮主题颜色 */
 :root {
-    --hl-color: #ffffff; /* Ĭ��������ɫ��Ϊ��ɫ */
-    --hl-bg: #181818; /* ������ɫ��Ϊ�ǳ���Ļ�ɫ */
-    --hltools-bg: #0094ff; /* ������������ɫ��Ϊ����ɫ */
-    --hltools-color: #ffffff; /* ������������ɫ��Ϊ��ɫ */
-    --hlnumber-bg: #2F2F2F; /* �кű�����ɫ��Ϊһ�ַǳ���Ļ�ɫ���� #181818 ��΢ǳһЩ */
-    --hlnumber-color: #ffffff; /* �к�������ɫ��Ϊ��ɫ */
+    --hl-color: #ffffff; /* 默认字体颜色为白色 */
+    --hl-bg: #181818; /* 背景颜色为深黑色 */
+    --hltools-bg: #0094ff; /* 高亮工具栏背景颜色为蓝色 */
+    --hltools-color: #ffffff; /* 高亮工具栏字体颜色为白色 */
+    --hlnumber-bg: #2F2F2F; /* 行号背景颜色为一种深黑色，比 #181818 稍浅一些 */
+    --hlnumber-color: #ffffff; /* 行号字体颜色为白色 */
 }
 
 .hljs, .hljs *, .hljs-toolbar, .hljs-toolbar *, .hljs-ln-numbers, .hljs-ln-numbers * {
-    background: var(--hl-bg) !important; /* ʹ�ö���ı�����ɫ */
-    color: var(--hl-color) !important; /* ʹ�ö����Ĭ��������ɫ */
-    font-size: 18px !important; /* ���������С */
-    line-height: 1.4 !important; /* �����и� */
+    background: var(--hl-bg) !important; /* 使用高亮的背景颜色 */
+    color: var(--hl-color) !important; /* 使用高亮的默认字体颜色 */
+    font-size: 18px !important; /* 设置字体大小 */
+    line-height: 1.4 !important; /* 设置行高 */
 }
 
 .hljs-toolbar {
-    background: var(--hltools-bg) !important; /* ������������ɫ */
-    color: var(--hltools-color) !important; /* ������������ɫ */
-    font-size: 18px !important; /* ���ù����������С */
+    background: var(--hltools-bg) !important; /* 高亮工具栏背景颜色 */
+    color: var(--hltools-color) !important; /* 高亮工具栏字体颜色 */
+    font-size: 18px !important; /* 设置工具栏的字体大小 */
 }
 
 .hljs-ln-numbers {
-    background: var(--hlnumber-bg) !important; /* �кű�����ɫ */
-    color: var(--hlnumber-color) !important; /* �к�������ɫ */
-    font-size: 18px !important; /* �����к������С */
-    line-height: 1.4 !important; /* �����к��и� */
+    background: var(--hlnumber-bg) !important; /* 行号背景颜色 */
+    color: var(--hlnumber-color) !important; /* 行号字体颜色 */
+    font-size: 18px !important; /* 设置行号的字体大小 */
+    line-height: 1.4 !important; /* 设置行号的行高 */
 }
 
 pre, code {
-    font-size: 18px !important; /* ���������С */
-    line-height: 1.4 !important; /* �����и� */
+    font-size: 18px !important; /* 设置字体大小 */
+    line-height: 1.4 !important; /* 设置行高 */
 }
 
-/* VS2022 ��ɫ���� */
+/* VS2022 颜色主题 */
 .hljs-comment,
 .hljs-quote {
-    color: #6a9955 !important; /* ע�� */
+    color: #6a9955 !important; /* 注释 */
 }
 
 .hljs-keyword {
-    color: #569cd6 !important; /* �ؼ��� */
+    color: #569cd6 !important; /* 关键字 */
 }
 
 .hljs-built_in {
-    color: #c586c0 !important; /* �ڽ����� */
+    color: #c586c0 !important; /* 内建函数 */
 }
 
 .hljs-type {
-    color: #569cd6 !important; /* ���� (���� int, void) */
+    color: #569cd6 !important; /* 类型 (如 int, void) */
 }
 
 .hljs-title {
-    color: #dcdcaa !important; /* ���� (���纯����) */
+    color: #dcdcaa !important; /* 标题 (如函数名) */
 }
 
 .hljs-attribute {
-    color: #9cdcfe !important; /* ���� */
+    color: #9cdcfe !important; /* 属性 */
 }
 
 .hljs-literal {
-    color: #569cd6 !important; /* ������ */
+    color: #569cd6 !important; /* 字面量 */
 }
 
 .hljs-number {
-    color: #b5cea8 !important; /* ���� */
+    color: #b5cea8 !important; /* 数字 */
 }
 
 .hljs-regexp,
 .hljs-string,
 .hljs-meta .hljs-string {
-    color: #ce9178 !important; /* �������ʽ���ַ��� */
+    color: #ce9178 !important; /* 正则表达式和字符串 */
 }
 
 .hljs-symbol,
 .hljs-bullet,
 .hljs-link {
-    color: #dcdcaa !important; /* ���š��ӵ������� */
+    color: #dcdcaa !important; /* 符号、列表项标记和链接 */
 }
 
 .hljs-variable,
 .hljs-template-variable {
-    color: #9cdcfe !important; /* ������ģ����� */
+    color: #9cdcfe !important; /* 变量和模板变量 */
 }
 
 .hljs-template-tag {
-    color: #569cd6 !important; /* ģ���ǩ */
+    color: #569cd6 !important; /* 模板标签 */
 }
 
 .hljs-doctag {
-    color: #808080 !important; /* �ĵ���ǩ */
+    color: #808080 !important; /* 文档标签 */
 }
 
 .hljs-meta {
-    color: #9cdcfe !important; /* Ԫ��Ϣ */
+    color: #9cdcfe !important; /* 元信息 */
 }
 
 .hljs-operator {
-    color: #d4d4d4 !important; /* ������ */
+    color: #d4d4d4 !important; /* 操作符 */
 }
 
 .hljs-deletion {
-    color: #ce9178 !important; /* ɾ�� */
+    color: #ce9178 !important; /* 删除 */
 }
 
 .hljs-addition {
-    color: #b5cea8 !important; /* ���� */
+    color: #b5cea8 !important; /* 添加 */
 }
 
 .hljs-emphasis {
@@ -117,15 +117,15 @@ pre, code {
 }
 
 .hljs-preprocessor {
-    color: #c586c0 !important; /* Ԥ����ָ�� (���� #include) */
+    color: #c586c0 !important; /* 预处理指令 (如 #include) */
 }
 
-/* Ϊ��ȷ���кźʹ������Ӧ�����С�ı仯 */
+/* 为确保行号和代码内容的字体大小的一致 */
 .hljs-ln-line {
-    font-size: 18px !important; /* �����к������С */
-    line-height: 1.4 !important; /* �����к��и� */
+    font-size: 18px !important; /* 设置行号的字体大小 */
+    line-height: 1.4 !important; /* 设置行号的行高 */
 }
-/* ȷ��ҳ�ź�ͷͼ�ı���͸����������������ȼ� */
+/* 确保页脚和头图的背景透明，且优先级最高 */
 html body #footer {
     background: transparent !important;
 }
@@ -134,7 +134,7 @@ html body #page-header {
     background: transparent !important;
 }
 
-/* ȷ������ģʽ�µ�����͸����������������ȼ� */
+/* 确保暗模式中的背景透明，且优先级最高 */
 html body #footer::before {
     background: transparent !important;
 }
@@ -143,7 +143,7 @@ html body #page-header::before {
     background: transparent !important;
 }
 
-/* ȷ��ҹ��ģʽ�µ�����͸����������������ȼ� */
+/* 确保暗模式中的背景透明，且优先级最高 */
 html body[data-theme="dark"] #footer::before {
     background: transparent !important;
 }
@@ -153,48 +153,48 @@ html body[data-theme="dark"] #page-header::before {
 }
 
 
-/* С��������������ҹģʽ���� */
-/* һ��״̬ */
+/* 小磁力链接在暗模式下的样式 */
+/* 默认状态 */
 [data-theme="dark"] .magnet_link_context {
   background: #1e1e1e;
   color: antiquewhite;
 }
-/* �������״̬ */
+/* 鼠标悬停状态 */
 [data-theme="dark"] .magnet_link_context:hover {
   background: #3ecdf1;
   color: #f2f2f2;
 }
 
-/* ��ҳ��ť���� */
+/* 分页按钮样式 */
 #pagination {
     width: 100%;
     margin: auto;
 }
 
-/* һ���˵����� */
+/* 顶部菜单样式 */
 #nav .menus_items {
   position: absolute !important;
   width: fit-content !important;
   left: 50% !important;
   transform: translateX(-52%) !important;
 }
-/* �Ӳ˵�����չʾ */
+/* 子菜单显示 */
 #nav .menus_items .menus_item:hover .menus_item_child {
   display: flex !important;
 }   
-/* �����2�Ǵ����������ĵ�2��Ԫ�أ������Ӳ˵���Ԫ�أ����԰��Լ������޸� */
+/* 调整第2个顶级菜单项的第2个子菜单项的位置，可根据需要自行修改 */
 .menus_items .menus_item:nth-child(2) .menus_item_child {
     left: -72px;
 }
 
-/* �ռ�ģʽ����Ч */
+/* 白天模式下的动画效果 */
 [data-theme="light"] #site-name,
 [data-theme="light"] #site-title,
 [data-theme="light"] #site-subtitle,
 [data-theme="light"] #post-info {
   animation: none;
 }
-/* ҹ��ģʽ��Ч */
+/* 夜间模式动画效果 */
 [data-theme="dark"] #site-name,
 [data-theme="dark"] #site-title {
   animation: light_15px 10s linear infinite;
@@ -205,7 +205,7 @@ html body[data-theme="dark"] #page-header::before {
 [data-theme="dark"] #post-info {
   animation: light_5px 10s linear infinite;
 }
-/* �ؼ�֡���� */
+/* 关键帧动画 */
 @keyframes light_15px {
   0% {
     text-shadow: #5636ed 0 0 15px;
@@ -305,7 +305,7 @@ html body[data-theme="dark"] #page-header::before {
   }
 }
 
-/* ���������ǹ�  */
+/* 宇宙背景 */
 #universe{
   display: block;
   position: fixed;
@@ -318,11 +318,11 @@ html body[data-theme="dark"] #page-header::before {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  /* ����ǵ��ö������ȼ��ģ�-1������ҳ���棬�������棬�����Ƽ����� */
+  /* 背景的z轴层级，-1表示在页面内容后面，背景前面，推荐设置 */
   z-index: -2;
 }
 
-/* �����������Ϣ��Ƭ��̬����ɫ */
+/* 侧边栏个人信息卡片动态背景色 */
 #aside-content > .card-widget.card-info {
   background: linear-gradient(
     -45deg,
@@ -373,12 +373,12 @@ html body[data-theme="dark"] #page-header::before {
   }
 }
 
-/* ��ҹģʽ���� */
+/* 夜间模式背景 */
 [data-theme="dark"] #aside-content > .card-widget.card-info {
   background: #191919ee;
 }
 
-/* ������ϢFollow me��ť */
+/* 侧边栏Follow me按钮 */
 #aside-content > .card-widget.card-info > #card-info-btn {
   background-color: #3eb8be;
   border-radius: 8px;
@@ -391,7 +391,7 @@ html body[data-theme="dark"] #page-header::before {
   --backdrop-filter: blur(5px) saturate(150%);
 }
 
-/* ��ҳ���¿�Ƭ */
+/* 首页最新文章卡片 */
 #recent-posts > .recent-post-item {
   background: var(--trans-light);
   backdrop-filter: var(--backdrop-filter);
@@ -399,7 +399,7 @@ html body[data-theme="dark"] #page-header::before {
   border: var(--border-style);
 }
 
-/* ��ҳ������Ƭ */
+/* 侧边栏卡片 */
 #aside-content .card-widget {
   background: var(--trans-light);
   backdrop-filter: var(--backdrop-filter);
@@ -407,7 +407,7 @@ html body[data-theme="dark"] #page-header::before {
   border: var(--border-style);
 }
 
-/* ����ҳ���鵵ҳ����ͨҳ�� */
+/* 文章页、归档页和普通页面 */
 div#post,
 div#page,
 div#archive {
@@ -417,7 +417,7 @@ div#archive {
   border-radius: 20px;
 }
 
-/* ������ */
+/* 导航栏 */
 #page-header.nav-fixed #nav {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: var(--backdrop-filter);
@@ -427,7 +427,7 @@ div#archive {
   background: rgba(0, 0, 0, 0.7) !important;
 }
 
-/* ҹ��ģʽ���� */
+/* 夜间模式背景 */
 [data-theme="dark"] #recent-posts > .recent-post-item,
 [data-theme="dark"] #aside-content .card-widget,
 [data-theme="dark"] div#post,
@@ -437,7 +437,7 @@ div#archive {
 }
 
 
-/* ҹ��ģʽҳ��ҳͷ����͸�� */
+/* 夜间模式页脚页头背景透明 */
 [data-theme="dark"] #footer::before {
   background: transparent !important;
 }
@@ -445,7 +445,7 @@ div#archive {
   background: transparent !important;
 }
 
-/* �Ķ�ģʽ */
+/* 阅读模式 */
 .read-mode #aside-content .card-widget {
   background: rgba(158, 204, 171, 0.5) !important;
 }
@@ -453,7 +453,7 @@ div#archive {
   background: rgba(158, 204, 171, 0.5) !important;
 }
 
-/* ҹ��ģʽ�µ��Ķ�ģʽ */
+/* 夜间模式下的阅读模式 */
 [data-theme="dark"] .read-mode #aside-content .card-widget {
   background: rgba(25, 25, 25, 0.9) !important;
   color: #ffffff;
@@ -463,10 +463,10 @@ div#archive {
   color: #ffffff;
 }
 
-/* ֡�ʼ�� */
+/* 帧率显示 */
 #fps {
   position: fixed;
-  /* ָ��λ�� */
+  /* 指定位置 */
   left: 10px;
   bottom: 10px;
   z-index: 1919810;
@@ -484,18 +484,18 @@ div#archive {
   border-radius: 4px;
 }
 
-/* �����ͼ�� */
+/* 社交图标 */
 svg.social_icon {
   width: 1.38em;
   height: 1.38em;
   vertical-align: -0.24em;
   fill: currentColor;
   overflow: hidden;
-  margin-left: 2px; /* ������߾������ƾ��� */
-  margin-right: 3px; /* �����ұ߾������ƾ��� */
+  margin-left: 2px; /* 设置左边距以调整图标 */
+  margin-right: 3px; /* 设置右边距以调整图标 */
 }
 
-/* ѩ����Ч */
+/* 雪花效果 */
 [data-theme="light"] #snow{
   display: block;
   position: fixed;
@@ -507,22 +507,36 @@ svg.social_icon {
   z-index: -2;
 }
 
-/* ѩ����ҹģʽ����ʾ */
+/* 雪花在夜间模式下不显示 */
 [data-theme="dark"] #snow{
   display: none;
 }
 
-/* ���������С */
-p {
-    font-size: 18px;
-}
-/* �����б� */
-.text-ol {
-  font-size: 18px; /* �ı��������б��������С */
+/* 普通字体大小 */
+body {
+  font-size: 16px;
 }
 
-/* �����б� */
-ul {
-    font-size: 18px;
+/* 段落字体大小 */
+p {
+  font-size: 16px;
 }
- 
+/* 有序列表 */
+ol {
+  font-size: 16px; 
+}
+
+/* 无序列表 */
+ul {
+  font-size: 16px;
+}
+
+/* 一级标题 */
+h1 {
+  font-size: 32px;
+}
+
+/* 二级标题 */
+h2 {
+  font-size: 24px;
+}

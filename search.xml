@@ -1,6 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++ STL(Standad Template Library)</title>
+    <url>/2025/03/22/C++%20STL(Standad%20Template%20Library)/</url>
+    <content><![CDATA[<h1 id="一、vector"><a href="#一、vector" class="headerlink" title="一、vector"></a>一、vector</h1><h2 id="1-vector-基本概念"><a href="#1-vector-基本概念" class="headerlink" title="1. vector 基本概念"></a>1. vector 基本概念</h2><p><code>vector</code> 是 C++ 标准模板库（STL）中的一个容器类，用于存储动态数组。与普通数组不同，<code>vector</code> 可以根据需要自动调整其大小，并且提供了许多方便的成员函数来操作存储的元素</p>
+<h2 id="2-常见的vector容器操作"><a href="#2-常见的vector容器操作" class="headerlink" title="2. 常见的vector容器操作"></a>2. 常见的vector容器操作</h2><p><code>vector</code>容量的本质是内存中连续分配元素的内存空间数量，容量必须是整数，无法存在“半个元素”的空间，且实际计算通过整数运算完成</p>
+<ol>
+<li><strong>迭代器：</strong>是一个类，可以当作为广义指针（功能比普通指针强大）</li>
+<li><strong>begin()：</strong>是一个 <code>vector</code>容器的一个成员函数，用于返回容器首元素的迭代器（准确的说法是返回迭代器类的对象）</li>
+<li><strong>end()：</strong>是一个 <code>vector</code>容器的一个成员函数，用于返回容器尾元素后一位内存的迭代器（准确的说法是返回迭代器类的对象）</li>
+<li><strong>front()：</strong>是一个 <code>vector</code>容器的一个成员函数，用于返回容器首元素的值</li>
+<li><strong>back()：</strong>是一个 <code>vector</code>容器的一个成员函数，用于返回容器尾元素的值</li>
+<li><strong>capacity()：</strong>是一个 <code>vector</code>容器的一个成员函数，用于返回容器的容量大小（整个容器所占的内存空间）</li>
+<li><strong>push_back：</strong>是一个 <code>vector</code>容器的一个成员函数，用于在容器的尾元素后一位添加一个新的元素，如果<code>v.push_back(一个元素)</code>后，超过<code>vector</code>原本的容量，<code>vector</code>容器就会(<code>VS</code>)1.5倍或(<code>GCC</code>)2倍扩容，（整数运算）公式：<code>new_capacity = old_capacity + old_capacity / 2</code>（原因：减少了重新分配内存的次数，同时避免了过多的内存浪费）</li>
+<li><strong>pop_back：</strong>是一个<code>vector</code>容器的一个成员函数，用于删除容器的尾元素（<code>v.pop_back()</code>）</li>
+</ol>
+<p><strong>代码示例</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">// 使用初始化列表创建一个 vector，包含 4 个元素：2, 0, 2, 5</span><br>    vector&lt;<span class="hljs-type">int</span>&gt; v = &#123; <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span> &#125;;<br><br>    <span class="hljs-comment">// 在 vector 末尾删除一个元素 5</span><br>    v.<span class="hljs-built_in">pop_back</span>();<br><br>    <span class="hljs-comment">// 输出 vector 的当前容量</span><br>    cout &lt;&lt; v.<span class="hljs-built_in">capacity</span>() &lt;&lt; endl;<br><br>    <span class="hljs-comment">// 在 vector 末尾添加一个元素 2</span><br>    v.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">2</span>);<br><br>    <span class="hljs-comment">// 在 vector 末尾添加一个元素 5</span><br>    v.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">5</span>);<br><br>    <span class="hljs-comment">// 输出 vector 添加元素后的容量</span><br>    cout &lt;&lt; v.<span class="hljs-built_in">capacity</span>() &lt;&lt; endl;<br><br>    <span class="hljs-comment">// 输出 vector 第一个元素的值</span><br>    cout &lt;&lt; <span class="hljs-string">&quot;begin: &quot;</span> &lt;&lt; *v.<span class="hljs-built_in">begin</span>() &lt;&lt; endl;<br><br>    <span class="hljs-comment">// 输出 vector 最后一个元素的值</span><br>    cout &lt;&lt; <span class="hljs-string">&quot;end: &quot;</span> &lt;&lt; *(v.<span class="hljs-built_in">end</span>() - <span class="hljs-number">1</span>) &lt;&lt; endl;<br><br>    <span class="hljs-comment">// 输出 vector 第一个元素的值（与 begin() 相同）</span><br>    cout &lt;&lt; <span class="hljs-string">&quot;front: &quot;</span> &lt;&lt; v.<span class="hljs-built_in">front</span>() &lt;&lt; endl;<br><br>    <span class="hljs-comment">// 输出 vector 最后一个元素的值（与 end() - 1 相同）</span><br>    cout &lt;&lt; <span class="hljs-string">&quot;back: &quot;</span> &lt;&lt; v.<span class="hljs-built_in">back</span>() &lt;&lt; endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="3-vector-对象创建"><a href="#3-vector-对象创建" class="headerlink" title="3. vector 对象创建"></a>3. vector 对象创建</h2><p><code>vector</code>创建对象的方式有6种：</p>
+<ol>
+<li><strong>默认构造函数：</strong>创建一个空的<code>vector</code>，没有任何元素（数据）</li>
+<li><strong>初始化列表：</strong>用一组初始值创建<code>vector</code>，可以用间接初始化或直接初始化</li>
+<li><strong>迭代器：</strong>用另一个<code>vector</code>的一部分或全部元素创建新的<code>vector</code></li>
+<li><strong>全0初始化：</strong>创建一个指定大小的<code>vector</code>，所有的元素初始化为 0</li>
+<li><strong>指定大小和初始值：</strong><code>vector&lt;int&gt; 变量名(a, b);</code>申请<code>a</code>个空间的元素，每个元素的值初始化为<code>b</code></li>
+<li><strong>拷贝构造函数</strong>：用另一个<code>vector</code>创建新的<code>vector</code>，内容完全相同</li>
+</ol>
+<p><strong>代码示例</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">printVector</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; v)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span> (vector&lt;<span class="hljs-type">int</span>&gt;::iterator iter = v.<span class="hljs-built_in">begin</span>(); iter != v.<span class="hljs-built_in">end</span>(); ++iter)<br>    &#123;<br>        cout &lt;&lt; *iter &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>    cout &lt;&lt; endl;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">// 1.默认构造函数</span><br>    <span class="hljs-comment">// 创建一个空的 vector，没有任何元素</span><br>    cout &lt;&lt; <span class="hljs-string">&quot;v1: &quot;</span>;<br>    vector&lt;<span class="hljs-type">int</span>&gt; v1;<br>    <span class="hljs-built_in">printVector</span>(v1);<br><br>    <span class="hljs-comment">// 2.初始化列表</span><br>    <span class="hljs-comment">// 用一组初始值创建 vector</span><br>    vector&lt;<span class="hljs-type">int</span>&gt; v2_1 = &#123; <span class="hljs-number">9</span>, <span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span> &#125;; <span class="hljs-comment">// 间接初始化</span><br>    cout &lt;&lt; <span class="hljs-string">&quot;v2_1: &quot;</span>;<br>    <span class="hljs-built_in">printVector</span>(v2_1);<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">v2_2</span><span class="hljs-params">(&#123; <span class="hljs-number">9</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">5</span> &#125;)</span></span>; <span class="hljs-comment">// 直接初始化</span><br>    cout &lt;&lt; <span class="hljs-string">&quot;v2_2: &quot;</span>;<br>    <span class="hljs-built_in">printVector</span>(v2_2);<br><br>    <span class="hljs-comment">// 3.迭代器</span><br>    <span class="hljs-comment">// 用另一个 vector 的一部分或全部元素创建新的 vector</span><br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">v3</span><span class="hljs-params">(v2_<span class="hljs-number">1.</span>begin(), v2_<span class="hljs-number">1.</span>end())</span></span>;<br>    cout &lt;&lt; <span class="hljs-string">&quot;v3: &quot;</span>;<br>    <span class="hljs-built_in">printVector</span>(v3);<br><br>    <span class="hljs-comment">// 4.全0初始化</span><br>    <span class="hljs-comment">// 创建一个指定大小的 vector，所有元素初始化为 0</span><br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">v4</span><span class="hljs-params">(<span class="hljs-number">8</span>)</span></span>;<br>    cout &lt;&lt; <span class="hljs-string">&quot;v4: &quot;</span>;<br>    <span class="hljs-built_in">printVector</span>(v4);<br><br>    <span class="hljs-comment">// 5.指定大小和初始值</span><br>    <span class="hljs-comment">// 5.vector&lt;int&gt; 变量名(a, b); 申请a个空间的元素，每个元素的值初始化为b</span><br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">v5</span><span class="hljs-params">(<span class="hljs-number">8</span>, <span class="hljs-number">6</span>)</span></span>;<br>    cout &lt;&lt; <span class="hljs-string">&quot;v5: &quot;</span>;<br>    <span class="hljs-built_in">printVector</span>(v5);<br><br>    <span class="hljs-comment">// 6.拷贝构造函数</span><br>    <span class="hljs-comment">// 用另一个 vector 创建新的 vector，内容完全相同</span><br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">v6</span><span class="hljs-params">(v2_2)</span></span>;<br>    cout &lt;&lt; <span class="hljs-string">&quot;v6: &quot;</span>;<br>    <span class="hljs-built_in">printVector</span>(v6);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="二、algorithm"><a href="#二、algorithm" class="headerlink" title="二、algorithm"></a>二、algorithm</h1><h2 id="1-algorithm-基本概念"><a href="#1-algorithm-基本概念" class="headerlink" title="1. algorithm 基本概念"></a>1. algorithm 基本概念</h2><p><code>algorithm</code> 是 C++ 标准库中的一个头文件，包含了一组常用的算法函数。这些算法函数可以用于对容器中的元素进行操作，如排序、搜索、复制、替换等</p>
+<h2 id="2-常见的算法函数"><a href="#2-常见的算法函数" class="headerlink" title="2. 常见的算法函数"></a>2. 常见的算法函数</h2><p>以下是一些常见的算法函数及其用途：</p>
+<ol>
+<li><code>sort</code>：对范围内的元素进行排序</li>
+<li><code>find</code>：在范围内查找特定值</li>
+<li><code>copy</code>：将范围内的元素复制到另一个范围</li>
+<li><code>replace</code>：将范围内的特定值替换为另一个值</li>
+<li><code>accumulate</code>：计算范围内元素的累积和（需要包含 <code>&lt;numeric&gt;</code> 头文件）</li>
+</ol>
+<p><strong>代码示例</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span> <span class="hljs-comment">// 包含 algorithm 头文件</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;numeric&gt;</span>   <span class="hljs-comment">// 包含 numeric 头文件以使用 accumulate</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iterator&gt;</span>  <span class="hljs-comment">// 包含 iterator 头文件以使用 back_inserter</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt; v = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;;<br><br>    <span class="hljs-comment">// 使用 std::sort 对向量进行排序</span><br>    <span class="hljs-built_in">sort</span>(v.<span class="hljs-built_in">begin</span>(), v.<span class="hljs-built_in">end</span>(), <span class="hljs-built_in">greater</span>&lt;<span class="hljs-type">int</span>&gt;()); <span class="hljs-comment">// 降序排序</span><br>    cout &lt;&lt; <span class="hljs-string">&quot;Sorted vector: &quot;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> n : v) &#123;<br>        cout &lt;&lt; n &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>    cout &lt;&lt; endl;<br><br>    <span class="hljs-comment">// 使用 std::find 查找元素</span><br>    <span class="hljs-keyword">auto</span> it = <span class="hljs-built_in">find</span>(v.<span class="hljs-built_in">begin</span>(), v.<span class="hljs-built_in">end</span>(), <span class="hljs-number">3</span>);<br>    <span class="hljs-keyword">if</span> (it != v.<span class="hljs-built_in">end</span>()) &#123;<br>        cout &lt;&lt; <span class="hljs-string">&quot;Element 3 found at position: &quot;</span> &lt;&lt; <span class="hljs-built_in">distance</span>(v.<span class="hljs-built_in">begin</span>(), it) &lt;&lt; endl;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        cout &lt;&lt; <span class="hljs-string">&quot;Element 3 not found&quot;</span> &lt;&lt; endl;<br>    &#125;<br><br>    <span class="hljs-comment">// 使用 std::accumulate 计算元素的累积和</span><br>    <span class="hljs-type">int</span> sum = <span class="hljs-built_in">accumulate</span>(v.<span class="hljs-built_in">begin</span>(), v.<span class="hljs-built_in">end</span>(), <span class="hljs-number">0</span>);<br>    cout &lt;&lt; <span class="hljs-string">&quot;Sum of elements: &quot;</span> &lt;&lt; sum &lt;&lt; endl;<br><br>    <span class="hljs-comment">// 使用 std::replace 替换元素</span><br>    <span class="hljs-built_in">replace</span>(v.<span class="hljs-built_in">begin</span>(), v.<span class="hljs-built_in">end</span>(), <span class="hljs-number">3</span>, <span class="hljs-number">10</span>);<br>    cout &lt;&lt; <span class="hljs-string">&quot;Vector after replacing 3 with 10: &quot;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> n : v) &#123;<br>        cout &lt;&lt; n &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>    cout &lt;&lt; endl;<br><br>    <span class="hljs-comment">// 使用 std::copy 复制元素到另一个 vector</span><br>    vector&lt;<span class="hljs-type">int</span>&gt; destination;<br>    std::<span class="hljs-built_in">copy</span>(v.<span class="hljs-built_in">begin</span>(), v.<span class="hljs-built_in">end</span>(), std::<span class="hljs-built_in">back_inserter</span>(destination));<br>    cout &lt;&lt; <span class="hljs-string">&quot;Destination vector after copy: &quot;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> n : destination) &#123;<br>        cout &lt;&lt; n &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>    cout &lt;&lt; endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>在这个示例中：</p>
+<ul>
+<li><code>std::sort</code> 用于对向量 <code>v</code> 进行降序排序</li>
+<li><code>std::find</code> 用于在向量 <code>v</code> 中查找元素 <code>3</code></li>
+<li><code>std::accumulate</code> 用于计算向量 <code>v</code> 中所有元素的累积和</li>
+<li><code>std::replace</code> 用于将向量 <code>v</code> 中的元素 <code>3</code> 替换为 <code>10</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机入门基础</title>
+    <url>/2024/08/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="一、-计算机硬件与冯·诺依曼架构的详细介绍"><a href="#一、-计算机硬件与冯·诺依曼架构的详细介绍" class="headerlink" title="一、 计算机硬件与冯·诺依曼架构的详细介绍"></a>一、 计算机硬件与冯·诺依曼架构的详细介绍</h1><h2 id="1-冯·诺依曼架构"><a href="#1-冯·诺依曼架构" class="headerlink" title="1. 冯·诺依曼架构"></a>1. 冯·诺依曼架构</h2><p>冯·诺依曼架构（Von Neumann Architecture）是现代计算机的基础架构。它由以下几个主要部分组成：</p>
+<ul>
+<li><strong>输入设备</strong>: 允许用户向计算机输入数据或指令，如键盘、鼠标、终端等。</li>
+<li><strong>CPU（中央处理器）</strong>: 包含运算器和控制器两部分，是计算机的大脑，用于执行指令和处理数据。<ul>
+<li><strong>运算器</strong>: 负责执行各种算术和逻辑运算。</li>
+<li><strong>控制器</strong>: 负责控制整个计算机系统的操作，包括指令的读取、解释和执行。</li>
+</ul>
+</li>
+<li><strong>外部存储器</strong>: 用于长期保存数据和程序（断电后不会丢失数据），如机械硬盘（HHD）、固态硬盘（SSD）、光盘、磁带等。</li>
+<li><strong>输出设备</strong>: 将计算结果或信息传递给用户，如显示器、打印机、终端等。</li>
+</ul>
+<p>这类架构强调了数据和指令存储在同一存储器中，并通过相同的总线传输，因此也被称为“存储程序计算机”。</p>
+<h2 id="2-计算机硬件"><a href="#2-计算机硬件" class="headerlink" title="2. 计算机硬件"></a>2. 计算机硬件</h2><p>计算机硬件可以分为以下几部分：</p>
+<ul>
+<li><p><strong>主板</strong>: 主板是计算机的核心硬件之一，连接了CPU、内存、存储设备、显卡等其他硬件。主板上的各种芯片和电路负责管理各部件之间的数据传输和协调工作。</p>
+</li>
+<li><p><strong>CPU（中央处理器）</strong>: CPU是计算机的核心处理单元，负责执行指令和处理数据。现代的CPU通常集成多个核心（多核），以提高计算性能。</p>
+</li>
+<li><p><strong>内存（RAM）</strong>: 内存是计算机的短期存储器，负责存储当前正在运行的程序和数据。它的速度非常快，但在关机断电时数据会丢失。</p>
+</li>
+<li><p><strong>硬盘</strong>: 硬盘是计算机的长期存储设备，用于存储操作系统、应用程序以及用户数据。常见的硬盘有机械硬盘（HDD）和固态硬盘（SSD），其中SSD的速度比HDD更快。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇博客</title>
+    <url>/2024/07/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World !"></a>Hello World !</h1><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    cout &lt;&lt; <span class="hljs-string">&quot;Hello World!&quot;</span>;<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Hello World!</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>开始学习C++</title>
     <url>/2024/08/23/%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0C++/</url>
     <content><![CDATA[<h1 id="一、头文件"><a href="#一、头文件" class="headerlink" title="一、头文件"></a>一、头文件</h1><h2 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h2><p> <code>iostream</code> 和 <code>stdio.h</code> 是 C++ 和 C 语言中分别用于输入输出操作的头文件。它们都提供了处理输入和输出的功能，但在实现方式和使用方式上有所不同。</p>
@@ -572,52 +672,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的第一篇博客</title>
-    <url>/2024/07/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World !"></a>Hello World !</h1><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    cout &lt;&lt; <span class="hljs-string">&quot;Hello World!&quot;</span>;<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>Hello World!</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机入门基础</title>
-    <url>/2024/08/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="一、-计算机硬件与冯·诺依曼架构的详细介绍"><a href="#一、-计算机硬件与冯·诺依曼架构的详细介绍" class="headerlink" title="一、 计算机硬件与冯·诺依曼架构的详细介绍"></a>一、 计算机硬件与冯·诺依曼架构的详细介绍</h1><h2 id="1-冯·诺依曼架构"><a href="#1-冯·诺依曼架构" class="headerlink" title="1. 冯·诺依曼架构"></a>1. 冯·诺依曼架构</h2><p>冯·诺依曼架构（Von Neumann Architecture）是现代计算机的基础架构。它由以下几个主要部分组成：</p>
-<ul>
-<li><strong>输入设备</strong>: 允许用户向计算机输入数据或指令，如键盘、鼠标、终端等。</li>
-<li><strong>CPU（中央处理器）</strong>: 包含运算器和控制器两部分，是计算机的大脑，用于执行指令和处理数据。<ul>
-<li><strong>运算器</strong>: 负责执行各种算术和逻辑运算。</li>
-<li><strong>控制器</strong>: 负责控制整个计算机系统的操作，包括指令的读取、解释和执行。</li>
-</ul>
-</li>
-<li><strong>外部存储器</strong>: 用于长期保存数据和程序（断电后不会丢失数据），如机械硬盘（HHD）、固态硬盘（SSD）、光盘、磁带等。</li>
-<li><strong>输出设备</strong>: 将计算结果或信息传递给用户，如显示器、打印机、终端等。</li>
-</ul>
-<p>这类架构强调了数据和指令存储在同一存储器中，并通过相同的总线传输，因此也被称为“存储程序计算机”。</p>
-<h2 id="2-计算机硬件"><a href="#2-计算机硬件" class="headerlink" title="2. 计算机硬件"></a>2. 计算机硬件</h2><p>计算机硬件可以分为以下几部分：</p>
-<ul>
-<li><p><strong>主板</strong>: 主板是计算机的核心硬件之一，连接了CPU、内存、存储设备、显卡等其他硬件。主板上的各种芯片和电路负责管理各部件之间的数据传输和协调工作。</p>
-</li>
-<li><p><strong>CPU（中央处理器）</strong>: CPU是计算机的核心处理单元，负责执行指令和处理数据。现代的CPU通常集成多个核心（多核），以提高计算性能。</p>
-</li>
-<li><p><strong>内存（RAM）</strong>: 内存是计算机的短期存储器，负责存储当前正在运行的程序和数据。它的速度非常快，但在关机断电时数据会丢失。</p>
-</li>
-<li><p><strong>硬盘</strong>: 硬盘是计算机的长期存储设备，用于存储操作系统、应用程序以及用户数据。常见的硬盘有机械硬盘（HDD）和固态硬盘（SSD），其中SSD的速度比HDD更快。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机</category>
-      </categories>
-      <tags>
-        <tag>计算机</tag>
       </tags>
   </entry>
 </search>
